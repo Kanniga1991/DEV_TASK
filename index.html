@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Assessment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varta:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header"><span>WHEELS</span></div>
+      <div class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi nulla accusamus blanditiis,
+        mollitia nemo, cupiditate qui totam aspernatur doloribus, assumenda adipisci repellat odio aliquid.</div>
+      <div class="flex">
+        <button class="btn lt" onclick="plusDivs(-1)"></button>
+        <div class="one">
+          <img src="./assets/wgu.png" alt="wgu" class="slide">
+          <div class="title">
+            17-INCH CAST ALUMINIUM WHEEL, FULLY<br>
+            PAINTED SILVER LITHO
+          </div>
+          <div class="description">
+            Standard on Touring FWD
+          </div>
+          <div class="variant">
+            (WGU)
+          </div>
+        </div>
+        <div class="one">
+          <img src="./assets/wjr.png" alt="wjr" class="slide">
+          <div class="title">
+            17-INCH CAST ALUMINIUM DIAMOND - CUT WHEEL<br>
+            WITH BALTIC GRAY POCKETS
+          </div>
+          <div class="description">
+            Standard on Touring L FWD / Hybrid and<br>
+            Touring Hydrid
+          </div>
+          <div class="variant">
+            (WJR)
+          </div>
+        </div>
+        <div class="one">
+          <img src="./assets/wp6.png" alt="wp6" class="slide">
+          <div class="title">
+            18-INCH CAST ALUMINIUM WHEEL WITH<br>
+            FORESHADOW FINISH
+          </div>
+          <div class="description">
+            Included with S Appearance Package on<br>
+            Touring Hybrid, Touring L Hybrid and<br>
+            Limited Hybrid
+          </div>
+          <div class="variant">
+            (WP6)
+          </div>
+        </div>
+        <div class="one">
+          <img src="./assets/wpf.png" alt="wpf" class="slide">
+          <div class="title">
+            18-INCH CAST ALUMINIUM DIAMOND - CUT WHEEL<br>
+            WITH BALTIC FINISH
+          </div>
+          <div class="description">
+            Included with S Appearance Package on<br>
+            Touring Hybrid, Touring L Hybrid<br>
+          </div>
+          <div class="variant">
+            (WPF)
+          </div>
+        </div>
+        <div class="one">
+          <img src="./assets/wpf.png" alt="wpf" class="slide">
+          <div class="title">
+            18-INCH CAST ALUMINIUM DIAMOND - CUT WHEEL<br>
+            WITH BALTIC FINISH
+          </div>
+          <div class="description">
+            Included with S Appearance Package on<br>
+            Touring Hybrid, Touring L Hybrid<br>
+          </div>
+          <div class="variant">
+            (WPF)
+          </div>
+        </div>
+        <div class="one">
+          <img src="./assets/wpf.png" alt="wpf" class="slide">
+          <div class="title">
+            18-INCH CAST ALUMINIUM DIAMOND - CUT WHEEL<br>
+            WITH BALTIC FINISH
+          </div>
+          <div class="description">
+            Included with S Appearance Package on<br>
+            Touring Hybrid, Touring L Hybrid<br>
+          </div>
+          <div class="variant">
+            (WPF)
+          </div>
+        </div>
+        <button class="btn gt" onclick="plusDivs(1)"></button>
+      </div>
+    </div>
+    <script>
+      let index = 1;
+      divs(index);
+      function plusDivs(n) {
+        divs((index += n));
+      }
+      function divs(n) {
+        let x = document.getElementsByClassName("one");
+        let btnlt = document.getElementsByClassName("lt");
+        let btngt = document.getElementsByClassName("gt");
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        if (index > 0 && index < x.length) {
+          x[index - 1].style.display = "block";
+          x[index].style.display = "block";
+          x[index + 1].style.display = "block";
+        }
+        if (index <= 1) {
+          btnlt[0].setAttribute("disabled", "");
+          btngt[0].removeAttribute("disabled");
+        }
+        if (index >= x.length / 2) {
+          btngt[0].setAttribute("disabled", "");
+          btnlt[0].removeAttribute("disabled");
+        }
+      }
+    </script>
+  </body>
+
+</html>
